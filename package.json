@@ -1,0 +1,26 @@
+{
+  "name": "monster-fighter",
+  "version": "1.0.0",
+  "description": "A card-based fighting game with D&amp;D monsters!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awoelf/monster-fighter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awoelf/monster-fighter/issues"
+  },
+  "homepage": "https://github.com/awoelf/monster-fighter#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.3"
+  }
+}
