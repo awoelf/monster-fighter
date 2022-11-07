@@ -1,0 +1,47 @@
+:root {
+    --beige: #FFECD6;
+    --dark-blue: #0D2B45;
+    --orange: #D08159;
+    --box-color: #1a1c2c50;
+    --fancy-font: 'New Rocker', cursive;
+    --font: 'Zilla Slab', serif;
+    --background-image: url('/assets/bg-castle.png');
+    --radius: 10px;
+    --header-size: 48px;
+    --font-size: 20px;
+}
+
+p {
+    font-family: var(--font);
+    color: #0D2B45;
+    font-size: var(--font-size);
+}
+
+input {
+    border-radius: var(--radius) !important;
+    font-family: var(--font);
+    border-color: white !important;
+}
+
+h1 {
+    font-family: var(--fancy-font);
+    color: #0D2B45;
+    font-size: var(--header-size);
+}
+
+.btn {
+    background-color: var(--orange) !important;
+    border-radius: var(--radius) !important;
+}
+
+#homepage {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: 40% 10%;
+}
+
+#sidebar {
+    background-color: var(--beige);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
