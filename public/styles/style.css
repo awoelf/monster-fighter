@@ -2,13 +2,17 @@
     --beige: #FFECD6;
     --dark-blue: #0D2B45;
     --orange: #D08159;
-    --box-color: #1a1c2c50;
+    --box-color: #1a1c2cc9;
     --fancy-font: 'New Rocker', cursive;
     --font: 'Zilla Slab', serif;
-    --background-image: url('/assets/bg-castle.png');
+    --homepage-image: url('/assets/bg-castle.png');
+    --dashboard-image: url('/assets/bg-forest.png');
     --radius: 10px;
-    --header-size: 48px;
+    --h1-size: 48px;
+    --h2-size: 32px;
     --font-size: 20px;
+    --bg-screen: #3C588D40;
+    --accent-color: #5f73b3ce;
 }
 
 p {
@@ -21,27 +25,109 @@ input {
     border-radius: var(--radius) !important;
     font-family: var(--font);
     border-color: white !important;
+    margin-left: 1rem;
+
 }
 
 h1 {
     font-family: var(--fancy-font);
     color: #0D2B45;
-    font-size: var(--header-size);
+    font-size: var(--h1-size);
+}
+
+h2 {
+    font-family: var(--fancy-font);
+    color: #0D2B45;
+    font-size: var(--h2-size);
+}
+
+li {
+    background-color: transparent !important;
+    border-color: var(--accent-color) !important;
+    font-family: var(--font);
+    color: var(--beige);
+    font-size: var(--h2-size);
+    text-align: left;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    margin: .2rem;
 }
 
 .btn {
-    background-color: var(--orange) !important;
     border-radius: var(--radius) !important;
 }
 
+.box {
+    background-color: var(--box-color);
+    border-radius: var(--radius);
+    width: 50%;
+}
+
+.box-text {
+    font-family: var(--font);
+    color: var(--beige);
+}
+
+.dropdown-menu {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.monster-card {
+    border-radius: var(--radius);
+    background-color: var(--beige);
+    width: 250px;
+    height: auto;
+}
+
+.monster-frame {
+    border: 2px solid var(--dark-blue);
+    border-radius: var(--radius);
+}
+
+.monster-image {
+    width: 200px;
+    height: auto;
+}
+
+.monster-stats {
+    z-index: 7;
+}
+
+.dropdown-item {
+    margin-top: 1rem !important;
+    width: min-content;
+}
+
+
 #homepage {
-    background-image: var(--background-image);
+    background-image: var(--homepage-image);
     background-size: cover;
     background-position: 40% 10%;
+    background-blend-mode: screen;
+    background-color: var(--bg-screen);
+}
+
+#homepage .btn {
+    background-color: var(--orange) !important;
 }
 
 #sidebar {
     background-color: var(--beige);
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
+}
+
+#dashboard {
+    background-image: var(--dashboard-image);
+    background-size: cover;
+    background-blend-mode: screen;
+    background-color: var(--bg-screen);
+}
+
+#dashboard .btn {
+    background-color: var(--beige) !important;
 }
