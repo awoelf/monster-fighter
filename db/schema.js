@@ -19,7 +19,6 @@ async function main()
         console.log(`DROPPED IF EXISTS ${process.env.DB_NAME}`);
         db.query("CREATE DATABASE ??", process.env.DB_NAME);
         console.log(`Created Database ${process.env.DB_NAME}`);
-        process.exit(0);
     }
     catch(e) {
         console.error(e);

@@ -2,37 +2,39 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const username = $('#username').val().trim();
+  const password = $('#password-login').val().trim();
+  const lobby = $('#lobby-id').val().trim();
 
-  if (email && password) {
+  if (username && password && lobby) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password, lobby }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
 };
 
+// Not sure if we need a separate sign up path???
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const username = $('#username').val().trim();
+  const password = $('#password-login').val().trim();
+  const lobby = $('#lobby-id').val().trim();
 
-  if (name && email && password) {
+  if (username && password && lobby) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ username, password, lobby }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -44,10 +46,10 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+$('#login-btn').on('click', () => {
+  loginFormHandler();
+})
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+$('#signup-btn').on('click', () => {
+  loginFormHandler();
+})
