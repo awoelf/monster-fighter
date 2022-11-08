@@ -1,0 +1,30 @@
+<div id="monsters" class="vh-100 vw-100">
+    {{> menu}}
+    <div class="d-flex col-10 mx-auto my-2 p-0">
+        <button class="d-flex align-items-center btn small-btn m-0 p-2">
+            <span class="material-symbols-outlined">
+                add
+            </span>
+        </button>
+        <button class="d-flex align-items-center btn small-btn m-0 ml-2 p-2">
+            <span class="material-symbols-outlined">
+                delete
+            </span>
+        </button>
+    </div>
+    <div class="col-10 d-flex flex-wrap box justify-content-around m-auto decks">
+        {{!-- Replace with actual cards --}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+        {{> card}}
+
+    </div>
+</div>
