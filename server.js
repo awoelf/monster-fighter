@@ -18,12 +18,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-// Server not set up yet, so this is commented out
-// sequelize.sync({ force: false }).then(() => {
-//     app.listen(PORT, () => console.log(`Listening at https://localhost/${PORT}`));
-// })
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+})
 
 // Debugging
-app.listen(PORT, () => {
-    console.log(`Listening at http://localhost:${PORT}`)
-});
+// app.listen(PORT, () => {
+//     console.log(`Listening at http://localhost:${PORT}`)
+// });
