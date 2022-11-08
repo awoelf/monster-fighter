@@ -168,13 +168,8 @@ li {
     background-color: var(--bg-screen);
 }
 
-#player, #monsters {
-    background-image: var(--dashboard-image);
-    background-size: cover;
-    background-blend-mode: screen;
-    background-color: var(--bg-screen);
-    overflow-x: hidden;
-    overflow-y: scroll;
+#dashboard .btn {
+    background-color: var(--beige) !important;
 }
 
 
