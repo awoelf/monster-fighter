@@ -1,15 +1,24 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306,
-  }
-);
+if(process.env.DB_URL)
+{
+    sequelize = new Sequelize(process.env.DB_URL);
+} else {
+    const sequelize = new Sequelize(
+        process.env.DB_NAME,
+        process.env.DB_USER,
+        process.env.DB_PASSWORD,
+        {
+          host: 'localhost',
+          dialect: 'mysql',
+          port: 3306,
+          pool: {
+              acquire: 1000000
+          }
+        }
+      );
+}
+
 
 module.exports = sequelize;
