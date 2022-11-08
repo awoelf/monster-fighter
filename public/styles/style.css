@@ -21,6 +21,7 @@ p, button {
     font-family: var(--font);
     color: #0D2B45;
     font-size: var(--font-size);
+    margin: 0;
 }
 
 input {
@@ -79,6 +80,10 @@ li {
     -webkit-text-stroke: 1.5px var(--dark-blue);
 }
 
+.deck-list li {
+    font-size: var(--font-size);
+}
+
 .btn {
     border-radius: var(--radius) !important;
     background-color: var(--beige) !important;
@@ -111,6 +116,23 @@ li {
 .dropdown-menu {
     background-color: transparent !important;
     border-color: transparent !important;
+}
+
+.modal-content {
+    background-color: var(--box-color) !important;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    border-color: var(--accent-color) !important;
+}
+
+.modal-text {
+    color: var(--beige);
+}
+
+.modal-body form {
+    height: 40vh;
+    overflow-y: scroll;
 }
 
 .monster-card {
