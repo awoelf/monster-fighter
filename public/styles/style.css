@@ -40,6 +40,7 @@ h1, h2 {
 
 h2 {
     font-size: var(--h2-size);
+    margin: 0;
 }
 
 h3 {
@@ -96,11 +97,12 @@ li {
     height: min-content;
 }
 
-.log {
+.log >* {
     background-color: var(--box-color);
     border-radius: var(--radius);
-    width: 100%;
-    height: 25vh;
+    height: 250px !important;
+    width: 500px !important;
+    overflow-y: scroll;
 }
 
 .decks {
@@ -139,7 +141,7 @@ li {
     border-radius: var(--radius);
     background-color: var(--beige);
     width: 250px;
-    height: auto;
+    height: 447px;
 }
 
 .monster-frame {
@@ -150,6 +152,7 @@ li {
 .monster-image {
     width: 175px;
     height: auto;
+    border-radius: var(--radius);
 }
 
 .dropdown-item {
@@ -165,6 +168,7 @@ li {
 
 .small-card {
     width: 200px;
+    height: 295px;
 }
 
 .small-card .monster-image {
@@ -179,8 +183,53 @@ li {
     width: 20px;
 }
 
+.small-card-back {
+    width: 200px;
+    height: 295px;
+}
+
+.small-card-back h2 {
+    font-size: var(--h2-size);
+    -webkit-text-stroke: 1px var(--dark-blue);
+}
+
+
 .small-btn {
     border-radius: 25px !important;
+}
+
+.extra-small-card-back, .extra-small-card {
+    width: 100px;
+    height: 147px;
+}
+
+.extra-small-card .monster-image {
+    width: 60px;
+}
+
+.extra-small-card p {
+    font-family: var(--fancy-font);
+    font-size: 12px;
+}
+
+.extra-small-card .card-icon {
+    width: 12px;
+}
+
+.smaller-border {
+    border-width: 4px;
+}
+
+.player-status {
+    background-color: var(--beige);
+    width: min-content;
+    height: min-content;
+    border-radius: var(--radius);
+}
+
+#playing-field .box {
+    width: 60%;
+    height: fit-content;
 }
 
 #homepage {
@@ -206,6 +255,8 @@ li {
     background-size: cover;
     background-blend-mode: screen;
     background-color: var(--bg-screen);
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #dashboard .btn {
