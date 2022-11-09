@@ -1,6 +1,7 @@
 <div id='player' class='vh-100 vw-100 container-fluid'>
+    {{!-- Menu partial --}}
     {{> menu}}
-    <div class="row d-flex justify-content-around">
+    <div class="row d-flex justify-content-around my-2">
         <div class="col-sm-6 col-lg-2 box mb-2">
             <h3 class="text-center mt-3">User 1</h3>
             <ul class="list-group list-group-flush">
@@ -15,27 +16,11 @@
                 </li>
             </ul>
         </div> 
-        <div class="col-sm-6 col-md-9 box py-2 pb-3 decks">
+        <div id="deck-container" class="col-sm-6 col-md-9 box py-2 pb-3 decks">
             <h3>Deck 1</h3>
             <div class="d-flex justify-content-around flex-wrap">
                 {{!-- Temporary for debugging. Will make a for loop to 
                 display cards --}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-            </div>
-            <h3>Deck 2</h3>
-            <div class="d-flex justify-content-around flex-wrap">
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-            </div>
-            <h3>Deck 3</h3>
-            <div class="d-flex justify-content-around flex-wrap">
                 {{> small-card}}
                 {{> small-card}}
                 {{> small-card}}
