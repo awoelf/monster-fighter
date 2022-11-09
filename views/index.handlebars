@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+  />
+   <!-- newRocker Font for headers -->
+  <link 
+  href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Zilla+Slab&display=swap" 
+  rel="stylesheet"
+>
+    <title>Firebase RealTime Chat</title>
+    <!-- css for this page, mostly pulled from Main CSS, needs merge and discard. -->
+    <link rel="stylesheet"  href="../public/chat/chatindex.css">
+  </head>
+  <body>
+    <header>
+      <h2>FIGHTER CHAT</h2>
+    </header>
+
+<!-- runs login for google sign in features. -->
+    <section id="whenSignedOut">
+      <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+    </section>
+
+<!-- runs logout for google sign out features. -->
+    <section id="whenSignedIn" hidden="true">
+      <div id="userDetails"></div>
+      <button id="signOutBtn" class="btn btn-primary">Signout</button>
+    </section>
+
+    <!-- Chat UL, input area and buttons.  li data pushed to database, then fetched and added into page as an li. -->
+    <section>
+      <div id="chat">
+        <ul id="messagesList">
+          
+        </ul>
+        <input id="message-input" type="text" />
+        <button id="message-btn" class="btn btn-success">Send</button>
+      </div>
+    </section>
+
+
+    <!-- scripts, first three are firebase specific scripts for running and interfacing with firebase.  last one is logic for the chat app and logins -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="../public/chat/srcindex.js" defer></script>
+  </body>
+</html>
+

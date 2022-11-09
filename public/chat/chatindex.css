@@ -1,0 +1,238 @@
+:root {
+  --beige: #FFECD6;
+  --dark-blue: #0D2B45;
+  --orange: #D08159;
+  --box-color: #1a1c2cc9;
+  --fancy-font: 'New Rocker', cursive;
+  --font: 'Zilla Slab', serif;
+  --homepage-image: url('/assets/bg-castle.png');
+  --dashboard-image: url('/assets/bg-forest.png');
+  --player-image: url('/assets/bg-desert.png');
+  --radius: 10px;
+  --h1-size: 48px;
+  --h2-size: 32px;
+  --font-size: 20px;
+  --bg-screen: #3C588D40;
+  --accent-color: #5f73b3ce;
+}
+
+p {
+  font-family: var(--font);
+  color: #0D2B45;
+  font-size: var(--font-size);
+}
+
+input {
+  border-radius: var(--radius) !important;
+  font-family: var(--font);
+  border-color: white !important;
+  margin-left: 1rem;
+
+}
+
+h1, h2 {
+  font-family: var(--fancy-font);
+  color: var(--dark-blue);
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-family: var(--font);
+  color: var(--beige);
+  font-size: var(--h2-size);
+}
+
+li {
+  background-color: transparent !important;
+  border-color: var(--accent-color) !important;
+  font-family: var(--font);
+  color: var(--beige);
+  font-size: var(--h2-size);
+  text-align: left;
+}
+
+.card-icon {
+  width: 40px;
+  height: auto;
+  margin: .2rem;
+}
+
+.btn {
+  border-radius: var(--radius) !important;
+  background-color: var(--beige) !important;
+}
+
+.box {
+  background-color: var(--box-color);
+  border-radius: var(--radius);
+  width: fit-content;
+  height: min-content;
+}
+
+.log {
+  background-color: var(--box-color);
+  border-radius: var(--radius);
+  width: 100%;
+  height: 25vh;
+}
+
+.decks {
+  overflow-y: scroll;
+  height: 75vh;
+}
+
+.box-text {
+  font-family: var(--font);
+  color: var(--beige);
+}
+
+.dropdown-menu {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.monster-card {
+  border-radius: var(--radius);
+  background-color: var(--beige);
+  width: 250px;
+  height: auto;
+}
+
+.monster-frame {
+  border: 2px solid var(--dark-blue);
+  border-radius: var(--radius);
+}
+
+.monster-image {
+  width: 175px;
+  height: auto;
+}
+
+.dropdown-item {
+  margin-top: 1rem !important;
+  width: min-content;
+}
+
+.page-title {
+  background-color: var(--beige) !important;
+  width: min-content;
+  border-radius: var(--radius);
+}
+
+.small-card {
+  width: 200px;
+}
+
+.small-card .monster-image {
+  width: 125px;
+}
+
+.small-card h2 {
+  font-size: var(--font-size);
+}
+
+.small-card .card-icon {
+  width: 20px;
+}
+
+.small-btn {
+  border-radius: 25px !important;
+}
+
+#homepage {
+  background-image: var(--homepage-image);
+  background-size: cover;
+  background-position: 40% 10%;
+  background-blend-mode: screen;
+  background-color: var(--bg-screen);
+}
+
+#homepage .btn {
+  background-color: var(--orange) !important;
+}
+
+#sidebar {
+  background-color: var(--beige);
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+#dashboard, #battlefield {
+  background-image: var(--dashboard-image);
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: var(--bg-screen);
+}
+
+#dashboard .btn {
+  background-color: var(--beige) !important;
+}
+
+body {
+  background-color: #f3f2f3;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+}
+
+#messages{
+  padding-bottom: 30%;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  background-color: #6929ca;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  width: 50%;
+}
+
+li span {
+  font-style: italic;
+  font-weight: bolder;
+  color: #b5b0b9;
+}
+
+#chat {
+  width: 80%;
+  margin: auto;
+}
+
+#message-form {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b7b5b9;
+}
+
+input {
+  width: 70%;
+  height: 30px;
+}
+
+button {
+  width: 25%;
+  height: 38px;
+}
+
+.sent {
+  text-align: right;
+  background-color: #a79cb3;
+  margin-left: 50%;
+}
+
+.sent span {
+  margin-left: 5px;
+  color: #6929ca;
+}
