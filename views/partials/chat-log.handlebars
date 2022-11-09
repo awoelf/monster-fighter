@@ -1,0 +1,32 @@
+<div class="dropup">
+    <button class="btn dropdown-toggle my-2" data-toggle="dropdown">
+        <span class="material-symbols-outlined">chat_bubble</span>
+    </button>
+    <!-- runs login for google sign in features. -->
+    <section id="whenSignedOut">
+      <button id="signInBtn" class="btn"><p>Sign in with Google</p></button>
+    </section>
+
+    <!-- runs logout for google sign out features. -->
+    <section id="whenSignedIn" hidden="true">
+      <div id="userDetails"></div>
+      <button id="signOutBtn" class="btn btn-primary"><p>Signout</p></button>
+    </section>
+    <div id="chat" class="box mx-3 dropdown-menu">
+        <ul id="messagesList" class="log list-group list-group-flush h-100 d-flex flex-column">
+            
+        </ul>
+        <div class="message-box d-flex align-items-center justify-content-around">
+            <input 
+                id="message-input"
+                class="my-2" 
+                type="text" 
+                size="38"
+                placeholder="Send a message"
+            >
+            <button id="message-btn" class="btn px-2 py-0">
+                <span class="material-symbols-outlined d-flex align-items-center">send</span>
+            </button>
+        </div>
+    </div>
+</div>
