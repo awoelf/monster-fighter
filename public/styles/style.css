@@ -97,11 +97,11 @@ li {
     height: min-content;
 }
 
-.log {
+.log >* {
     background-color: var(--box-color);
     border-radius: var(--radius);
-    height: 250px;
-    width: 500px;
+    height: 250px !important;
+    width: 500px !important;
     overflow-y: scroll;
 }
 
@@ -115,7 +115,7 @@ li {
     color: var(--beige);
 }
 
-.menu-buttons .dropdown-menu {
+.dropdown-menu {
     background-color: transparent !important;
     border-color: transparent !important;
 }

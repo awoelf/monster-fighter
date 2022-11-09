@@ -32,7 +32,7 @@
         <div id="player-area">
             <div class="d-flex flex-row align-items-end">
                 {{!-- Mouseover a small card to expand it --}}
-                <div class="col">
+                <div class="col-1 m-1">
                     {{> action-log}}
                     {{> health}}
                 </div>
@@ -42,12 +42,13 @@
                 {{> small-card}}
                 {{> small-card}}
                 {{> small-card-back}}
-                {{> mana}}
+                <div class="col-1 m-1">
+                    {{> mana}}
+                </div>
+                
             </div>
         </div>
     </div>
-    {{!-- <div class="col-1 p-0">
-        {{> action-log}}
-    </div> --}}
+    
     
 </div>
