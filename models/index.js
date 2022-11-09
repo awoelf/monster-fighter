@@ -1,10 +1,15 @@
 const Card = require('./Card');
-const User = require('./User');
+const User = require('./users');
 const Deck = require('./Deck');
 
-Deck.hasMany(Card, {
+Card.hasMany(Deck, {
     foreignKey: 'card_id',
     onDelete: 'CASCADE'
 });
-Card.belongsTo(Deck);
+User.hasMany(Deck, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Deck.belongsTo(Card);
 module.exports = {Card, User, Deck};
