@@ -9,11 +9,13 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
     crossorigin="anonymous"
   />
+   <!-- newRocker Font for headers -->
   <link 
   href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Zilla+Slab&display=swap" 
   rel="stylesheet"
 >
     <title>Firebase RealTime Chat</title>
+    <!-- css for this page, mostly pulled from Main CSS, needs merge and discard. -->
     <link rel="stylesheet"  href="./chatindex.css">
   </head>
   <body>
@@ -21,44 +23,30 @@
       <h2>FIGHTER CHAT</h2>
     </header>
 
+<!-- runs login for google sign in features. -->
     <section id="whenSignedOut">
       <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
     </section>
 
+<!-- runs logout for google sign out features. -->
     <section id="whenSignedIn" hidden="true">
       <div id="userDetails"></div>
       <button id="signOutBtn" class="btn btn-primary">Signout</button>
     </section>
 
-    <!-- <section>
-
-      <h2>My Firestore Things</h2>
-  
-      <ul id="thingsList">
-  
-      </ul>
-  
-      <button id="createThing" class="btn btn-success">Create Random Thing</button>
-  
-    </section> -->
-
+    <!-- Chat UL, input area and buttons.  li data pushed to database, then fetched and added into page as an li. -->
     <section>
       <div id="chat">
-
         <ul id="messagesList">
           
         </ul>
-
-
-        <!-- <form id="message-form"> -->
-          <input id="message-input" type="text" />
-          <button id="message-btn" class="btn btn-success">Send</button>
-        <!-- </form> -->
+        <input id="message-input" type="text" />
+        <button id="message-btn" class="btn btn-success">Send</button>
       </div>
     </section>
 
 
-    <!-- scripts -->
+    <!-- scripts, first three are firebase specific scripts for running and interfacing with firebase.  last one is logic for the chat app and logins -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
