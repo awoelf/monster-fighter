@@ -8,6 +8,7 @@
         class='d-flex flex-column align-items-center vh-100 justify-content-center'
       >
         <h1 id='title-text' class='my-3 text-center'>Monster Fighter</h1>
+        {{!-- Username input --}}
         <div class='row align-items-center my-2'>
           <p class='m-0'>Username</p>
           <div>
@@ -20,6 +21,7 @@
             />
           </div>
         </div>
+        {{!-- Password input --}}
         <div class='row align-items-center my-2'>
           <p class='m-0'>Password</p>
           <div>
@@ -32,6 +34,7 @@
             />
           </div>
         </div>
+        {{!-- Lobby id input --}}
         <div class='row align-items-center my-2'>
           <p class='m-0'>Lobby id</p>
           <div>
@@ -44,11 +47,17 @@
             />
           </div>
         </div>
-        <button type='button' class='btn my-2'>
-          <p class='m-0'>Log in</p>
-        </button>
+        {{!-- Log in and sign up buttons Not sure if we need a separate
+              Sign up button?--}}
+        <div class="row">
+          <button id="login-btn" type='button' class='btn my-2 mx-1'>
+            Log in
+          </button>
+          <button id="signup-btn" type='button' class='btn my-2 mx-1'>
+            Sign up
+          </button>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
