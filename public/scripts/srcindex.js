@@ -1,6 +1,3 @@
-// const { create } = require("handlebars");
-// const Handlebars = require("handlebars");
-
 console.log(firebase)
 
 // App's Firebase configuration
