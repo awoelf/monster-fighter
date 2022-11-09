@@ -101,6 +101,7 @@ li {
     background-color: var(--box-color);
     border-radius: var(--radius);
     height: 250px;
+    width: 500px;
     overflow-y: scroll;
 }
 
@@ -114,7 +115,7 @@ li {
     color: var(--beige);
 }
 
-.dropdown-menu {
+.menu-buttons .dropdown-menu {
     background-color: transparent !important;
     border-color: transparent !important;
 }
@@ -151,6 +152,7 @@ li {
 .monster-image {
     width: 175px;
     height: auto;
+    border-radius: var(--radius);
 }
 
 .dropdown-item {

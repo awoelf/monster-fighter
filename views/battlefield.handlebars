@@ -1,5 +1,6 @@
 <div id="battlefield" class="vh-100 vw-100 container-fluid d-flex flex-row">
     {{> menu}}
+    
     <div class="col-10 p-0 m-auto">
         <div id="opponent-area" class="d-flex justify-content-center">
             {{> health}}
@@ -31,7 +32,10 @@
         <div id="player-area">
             <div class="d-flex flex-row align-items-end">
                 {{!-- Mouseover a small card to expand it --}}
-                {{> health}}
+                <div class="col">
+                    {{> action-log}}
+                    {{> health}}
+                </div>
                 {{> small-card}}
                 {{> small-card}}
                 {{> small-card}}
