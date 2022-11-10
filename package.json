@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A card-based fighting game with D&amp;D monsters!",
   "main": "index.js",
+  "engines": {
+    "node": "16.18.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

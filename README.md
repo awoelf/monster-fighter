@@ -27,6 +27,7 @@ https://group11-monster-fighter.herokuapp.com/
 ### Browser support
 Chrome
 
+
 ## Built With
 1. Firebase & Friestore - Chat functionally 
 2. HTML, CSS, JavaScript
@@ -50,7 +51,9 @@ Game and user flow diagram
 ![alt text](./Screenshot%202022-11-10%20at%202.24.16%20PM.png)
 
 
+
 ## Authors
+
 * Cody - @krimeas
 * Alexis - @awoelf
 * Allen - @allenwang1999

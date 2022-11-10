@@ -4,14 +4,15 @@ const {Card, Deck, User} = require('../models');
 //should convert these functions to routes/event listeners
 
 //this should be retrieved from the db on login
-const userID = 1;
+const userID = 2;
 
 //testing the functions here
-sequelize.sync({force: false}).then(() => {
-    // buildDeck();
-    // const decks = getDecks(1);
-    // viewDeck(1, "meow2");
-    // deleteDeck(1, "meow2");
+sequelize.sync({force: false}).then(async () => {
+     buildDeck();
+    //  const decks = await getDecks(2);
+    //  console.log(decks);
+    //  viewDeck(1, "meow2");
+    //  deleteDeck(1, "meow2");
 });
 
 //function for drawing 40 cards when a player creates a deck, use this on landing page, create cards from this
@@ -82,7 +83,10 @@ async function getDecks(userID) {
     for(const deck of userDecks) {
         deckList.push(deck.dataValues.deck_name);
     }
-    return deckList;
+    var deckObjs = await deckList.map((deckName) => {
+        return {deckName};
+    })
+    return deckObjs;
 }
 
 //extract cards from a deck; should be used when selecting a deck to view it
@@ -113,6 +117,8 @@ async function deleteDeck(userID, deckName) {
     console.log(`Deleted ${deckName}`);
     return res;
 }
+
+
 
 //function which contains backend logic for deck creation (will not be used when linking with front end)
 async function buildDeck() {
