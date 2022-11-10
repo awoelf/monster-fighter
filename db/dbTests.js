@@ -110,7 +110,7 @@ async function viewDeck(userID, deckName) {
 async function deleteDeck(userID, deckName) {
     const res = await Deck.destroy({
         where: {
-            user_id: userID,
+            user_id: userID, //req.session.user_id
             deck_name: deckName
         }
     });
