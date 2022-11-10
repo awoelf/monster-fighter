@@ -43,7 +43,7 @@ h2 {
     margin: 0;
 }
 
-h3 {
+h3, #userDetails {
     font-family: var(--font);
     color: var(--beige);
     font-size: var(--h2-size);
@@ -54,8 +54,9 @@ li {
     border-color: var(--accent-color) !important;
     font-family: var(--font);
     color: var(--beige);
-    font-size: var(--h2-size);
+    font-size: var(--font-size);
     text-align: left;
+    margin
 }
 
 .card-icon {
@@ -97,13 +98,16 @@ li {
     height: min-content;
 }
 
-.log >* {
+.log {
     background-color: var(--box-color);
-    border-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
     height: 250px !important;
     width: 500px !important;
     overflow-y: scroll;
 }
+
+
 
 .decks {
     overflow-y: scroll;
@@ -225,6 +229,17 @@ li {
     width: min-content;
     height: min-content;
     border-radius: var(--radius);
+}
+
+.message-box {
+    width: 500px !important;
+    background-color: var(--box-color) !important;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.card-blank {
+    background-color: var(--box-color);
 }
 
 #playing-field .box {
