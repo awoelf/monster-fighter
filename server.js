@@ -1,7 +1,9 @@
 // Dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
+const session = require('express-session')
 const path = require('path');
+require('dotenv').config();
 
 // Sets up the Express App
 const app = express();
@@ -15,10 +17,20 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(session({
+    secret: process.env.SESS_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 300000,
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict'
+    }
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {

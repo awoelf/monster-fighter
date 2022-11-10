@@ -3,53 +3,55 @@ const loginFormHandler = async (event) => {
 
   // Collect values from the login form
   const username = $('#username').val().trim();
-  const password = $('#password-login').val().trim();
-  const lobby = $('#lobby-id').val().trim();
+  const password = $('#password').val().trim();
+  // const lobby = $('#lobby-id').val().trim();
 
-  if (username && password && lobby) {
+  if (username && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password, lobby }),
+      body: JSON.stringify({name: username, password: password}),
       headers: { 'Content-Type': 'application/json' },
     });
-
-    if (response.ok) {
+  
+    if (response.status === 200) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      const responseMessage = await response.json();
+      alert(responseMessage.message);
     }
   }
 };
 
-// Not sure if we need a separate sign up path???
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const username = $('#username').val().trim();
-  const password = $('#password-login').val().trim();
-  const lobby = $('#lobby-id').val().trim();
-
-  if (username && password && lobby) {
+  const password = $('#password').val().trim();
+  //TODO: implement multiplayer features
+  // const lobby = $('#lobby-id').val().trim();
+  // username && password && lobby
+  if (username && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, password, lobby }),
+      body: JSON.stringify({name: username, password: password}),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      document.location.replace('/profile');
+    if (response.status === 200) {
+      document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      const responseMessage = await response.json();
+      alert(responseMessage.message);
     }
   }
 };
 
-$('#login-btn').on('click', () => {
-  loginFormHandler();
+$('#login-btn').on('click', (e) => {
+  loginFormHandler(e);
 })
 
-$('#signup-btn').on('click', () => {
-  loginFormHandler();
+$('#signup-btn').on('click', (e) => {
+  signupFormHandler(e);
 })
