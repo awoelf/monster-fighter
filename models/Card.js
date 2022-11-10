@@ -43,7 +43,8 @@ Card.init(
         sequelize,
         freezeTableName: true,
         modelName: 'card',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     }
 );
 

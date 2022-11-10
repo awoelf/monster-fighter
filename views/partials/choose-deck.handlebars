@@ -1,18 +1,12 @@
 <div class="container d-flex flex-column align-items-center justify-content-center box">
     <h1 class="box-text my-2 px-3">Choose a deck</h1>
     <form class="list-group list-group-flush">
+        {{#each decks as |deck|}}
         <li class='list-group-item d-flex align-items-center'>
             <input type="radio" name="choose-deck" class="mr-2">
-            Deck 1  
+            {{deck.deckName}}
         </li>
-        <li class='list-group-item d-flex align-items-center'>
-            <input type="radio" name="choose-deck" class="mr-2">
-            Deck 2
-        </li>
-        <li class='list-group-item d-flex align-items-center'>
-            <input type="radio" name="choose-deck" class="mr-2">
-            Deck 2
-        </li>
+        {{/each}}
     </form>
     <button id="ready-btn" type='button' class='btn m-4' ><h2 class="m-0">Ready!</h2></button>
 </div>
