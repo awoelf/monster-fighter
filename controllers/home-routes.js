@@ -27,6 +27,7 @@ router.get('/dashboard', async (req, res) => {
                 return {deckName};
             })
             var deckRender = {decks: decks};
+            console.log(deckRender);
             res.render('dashboard', deckRender);
         } catch (e) {
             alert(e);
@@ -59,14 +60,12 @@ router.get('/player', async (req, res) => {
                             user_id: req.session.user_id
                         }
                     },
-                    //TODO: remove limit when able to render a whole deck in players page
-                    limit: 5
                 });
                 const cards = await joins.map((val) => {
                     delete val.dataValues.decks;
-                    return val.dataValues;
+                    return {card: val.dataValues};
                 });
-                decks.push({deckName: deck.dataValues.deck_name, deck: JSON.stringify(cards)});
+                decks.push({deckName: deck.dataValues.deck_name, deck: cards});
             }
             const renderObj = {name: name, deckSize: deckSize, decks: decks};
             console.log(renderObj);

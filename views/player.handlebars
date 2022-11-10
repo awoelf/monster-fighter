@@ -19,17 +19,12 @@
         <div id="deck-container" class="col-sm-6 col-md-9 box py-2 pb-3 decks">
             {{#each decks as |deck|}}
             <h3>{{deck.deckName}}</h3>
-            {{/each}}
-            {{!-- <h3>Deck 1</h3>
             <div class="d-flex justify-content-around flex-wrap">
-                {{!-- Temporary for debugging. Will make a for loop to 
-                display cards --}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-            </div> --}}
+            {{#each deck.deck as |card|}}
+            {{> small-card}}
+            {{/each}}
+            </div>
+            {{/each}}
         </div>     
     </div>
 </div>
