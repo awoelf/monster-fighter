@@ -1,7 +1,6 @@
 <div id="battlefield" class="vh-100 vw-100 container-fluid d-flex flex-row">
     {{> menu}}
-    
-    <div class="col-10 p-0 m-auto">
+    <div class="col-10 p-0 d-flex flex-column mx-auto justify-content-between">
         <div id="opponent-area" class="d-flex justify-content-center">
             {{> health}}
             {{> extra-small-card-back}}
@@ -12,7 +11,7 @@
             {{> mana}}
         </div>
         <div id="playing-field">
-            <div class="box m-auto">
+            <div class="box m-auto field-box">
                 <div class="d-flex justify-content-around opponent-field">
                     {{> blank-card}}
                     {{> blank-card}}
@@ -30,7 +29,7 @@
             </div>
         </div>
         <div id="player-area">
-            <div class="d-flex flex-row align-items-end">
+            <div class="d-flex flex-row align-items-end justify-content-center">
                 {{!-- Mouseover a small card to expand it --}}
                 <div class="col-1 m-1">
                     {{> chat-log}}

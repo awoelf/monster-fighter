@@ -33,6 +33,7 @@ https://group11-monster-fighter.herokuapp.com/
 ### Browser support
 Chrome
 
+
 ## Built With
     1. Firebase & Friestore - Chat functionally 
     2. HTML, CSS, JavaScript
@@ -57,7 +58,9 @@ https://docs.google.com/document/d/124t18icMxqRooAdwixC9HjvmSyH8-GCY6qC2acWBN4Q/
 
 
 
+
 ## Authors
+
 * Cody - @krimeas
 * Alexis - @awoelf
 * Allen - @allenwang1999
