@@ -23,7 +23,6 @@ const loginFormHandler = async (event) => {
   }
 };
 
-// Not sure if we need a separate sign up path???
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

@@ -1,12 +1,12 @@
 <div id="monsters" class="vh-100 vw-100 container-fluid">
     {{> menu}}
     <div class="d-flex col-10 mx-auto my-2 p-0">
-        <button class="d-flex align-items-center btn small-btn m-0 p-2" data-toggle="modal" data-target="#create-deck">
+        <button class="d-flex align-items-center btn small-btn m-0 p-2" id="add-btn" data-bs-toggle="modal" data-bs-target="#create-deck">
             <span class="material-symbols-outlined">
                 add
             </span>
         </button>
-        <button class="d-flex align-items-center btn small-btn m-0 ml-2 p-2" data-toggle="modal" data-target="#delete-deck">
+        <button class="d-flex align-items-center btn small-btn m-0 ml-2 p-2" id="delete-btn" data-bs-toggle="modal" data-bs-target="#delete-deck">
             <span class="material-symbols-outlined">
                 delete
             </span>
@@ -14,17 +14,7 @@
     </div>
     <div class="col-10 d-flex flex-wrap box justify-content-around m-auto decks py-2">
         {{!-- Replace with actual cards --}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
-        {{> card}}
+        {{> card uniqueId=115}}
     </div>
 </div>
 
@@ -34,7 +24,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="delete-deck-label">Delete a deck</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -42,20 +32,20 @@
                 <p class="modal-text">Select a deck to delete</p>
                 <form class="list-group list-group-flush deck-list">
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="radio" name="choose-deck" class="mr-2">
+                        <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
                         Deck 1  
                     </li>
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="radio" name="choose-deck" class="mr-2">
+                        <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
                         Deck 2
                     </li>
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="radio" name="choose-deck" class="mr-2">
+                        <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
                         Deck 3
                     </li>
                 </form>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><p>Close</p></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><p>Close</p></button>
                 <button type="button" id="delete-btn" class="btn btn-primary"><p>Delete Deck</p></button>
             </div>
             </div>
@@ -70,23 +60,23 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="create-deck-label">Create a deck</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p class="modal-text">0/5 Cards selected</p>
+                <p class="modal-text" id="cards-selected"></p>
                 <form class="list-group list-group-flush deck-list">
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="mr-2">
+                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
                         Card 1  
                     </li>
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="mr-2">
+                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
                         Card 2
                     </li>
                     <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="mr-2">
+                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
                         Card 3
                     </li>
                 </form>
@@ -101,7 +91,7 @@
                     />
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><p>Close</p></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><p>Close</p></button>
                 <button type="button" id="create-btn" class="btn btn-primary"><p>Create Deck</p></button>
             </div>
             </div>
