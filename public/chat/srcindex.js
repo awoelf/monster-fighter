@@ -1,6 +1,3 @@
-// const { create } = require("handlebars");
-// const Handlebars = require("handlebars");
-
 console.log(firebase)
 
 // App's Firebase configuration
@@ -70,11 +67,6 @@ let unsubscribe;
 auth.onAuthStateChanged(user =>{
   if(user) {
 
-    // document
-    // .getElementById("messagesList")
-    // .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-
-
     // goes to db and says chatRef is the items written under the chat table.  
     chatsRef = db.collection('chat')
 
@@ -94,13 +86,15 @@ auth.onAuthStateChanged(user =>{
         uid: user.uid,
         name: user.displayName,
         chat: message,
-        time: timestamp,
+        time: timestamp
       });
     }
+    // 
 
-    //pulls data from database that has been written by onclick above.  maps through the data, returns li item with 'name' and 'chat' data from doc.  Assignes it as innerHTML.
+    //pulls data from database that has been written by onclick above.  maps through the data, returns li item with 'name' and 'chat' data from doc.  Assignes it as innerHTML. for only one, leave uid's .where in.
     unsubscribe = chatsRef
-      .where('uid', '==', user.uid)
+      // .where('uid', '==', user.uid)
+      db.collection('chat').orderBy('time')
       .onSnapshot(querySnapshot => {
         const chatItems = querySnapshot.docs.map(doc => {
           return `<li>${doc.data().name}: ${doc.data().chat}</li>`
