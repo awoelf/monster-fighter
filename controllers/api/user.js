@@ -12,19 +12,15 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({message: "User exists or password length is less than 8."});
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { name: req.body.name } });
-
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect name or password, please try again' });
-      return;
+      return res.status(400).json({ message: 'Incorrect name or password, please try again' });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
