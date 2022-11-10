@@ -1,0 +1,9 @@
+<li class='list-group-item d-flex align-items-center list{{id}}'> 
+    <input type="checkbox" id={{id}} class="add-card-checkbox mr-2">
+    {{!-- Name should be inserted here --}}
+</li>
+
+<script src="/scripts/getName.js"></script>
+<script listId={{id}}>
+    getName(document.currentScript.getAttribute('listId'))
+</script>

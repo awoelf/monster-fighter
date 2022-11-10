@@ -14,8 +14,8 @@
     </div>
     <div id="allCards" class="col-10 d-flex flex-wrap box justify-content-around m-auto py-2">
         {{!-- Cards are inserted here --}}
-        {{#each cards as |cardId|}}
-            {{> card uniqueId=cardId}}
+        {{#each cardId as |card|}}
+            {{> card uniqueId=card}}
         {{/each}}
     </div>
 </div>
@@ -33,18 +33,12 @@
             <div class="modal-body">
                 <p class="modal-text">Select a deck to delete</p>
                 <form class="list-group list-group-flush deck-list">
+                    {{#each decks as |deck|}}
                     <li class='list-group-item d-flex align-items-center'>
                         <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
-                        Deck 1  
+                        {{deck}}  
                     </li>
-                    <li class='list-group-item d-flex align-items-center'>
-                        <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
-                        Deck 2
-                    </li>
-                    <li class='list-group-item d-flex align-items-center'>
-                        <input type="radio" name="choose-deck" class="delete-deck-input mr-2">
-                        Deck 3
-                    </li>
+                    {{/each}}
                 </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><p>Close</p></button>
@@ -68,18 +62,12 @@
             <div class="modal-body">
                 <p class="modal-text" id="cards-selected"></p>
                 <form class="list-group list-group-flush deck-list">
-                    <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
-                        Card 1  
+                    {{#each cardId as |card|}}
+                    <li class='list-group-item d-flex align-items-center'> 
+                        <input type="checkbox" class="add-card-checkbox mr-2">
+                        {{card}}
                     </li>
-                    <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
-                        Card 2
-                    </li>
-                    <li class='list-group-item d-flex align-items-center'>
-                        <input type="checkbox" name="choose-deck" class="add-card-checkbox mr-2">
-                        Card 3
-                    </li>
+                    {{/each}}
                 </form>
                 <div class="m-2 d-flex align-items-center justify-content-center">
                     <p class="modal-text flex-nowrap">Deck name:</p>
@@ -93,7 +81,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><p>Close</p></button>
-                <button type="button" id="create-btn" class="btn btn-primary"><p>Create Deck</p></button>
+                <button type="button" id="create-deck-btn" class="btn btn-primary"><p>Create Deck</p></button>
             </div>
             </div>
         </div>
