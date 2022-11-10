@@ -14,7 +14,9 @@
     </div>
     <div id="allCards" class="col-10 d-flex flex-wrap box justify-content-around m-auto py-2">
         {{!-- Cards are inserted here --}}
-        
+        {{#each cards as |cardId|}}
+            {{> card uniqueId=cardId}}
+        {{/each}}
     </div>
 </div>
 
@@ -98,7 +100,7 @@
     </div>
 </div>
 
-<script src="/scripts/renderAllCards.js"></script>
+{{!-- <script src="/scripts/renderAllCards.js"></script>
 <script>
     renderAllCards();
-</script>
+</script> --}}

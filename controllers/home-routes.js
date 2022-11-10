@@ -1,7 +1,6 @@
 const e = require('express');
 const {Deck, User, Card} = require('../models');
 const router = require('express').Router();
-
 // Route for the homepage
 router.get('/', async (req, res) => {
     if(req.session.logged_in) {
@@ -49,7 +48,20 @@ router.get('/player', async (req, res) => {
 
 router.get('/monsters', async (req, res) => {
     if(req.session.logged_in) {
-        res.render('monsters');
+        let idList = [];
+        let cardList = [];
+        Card.findAll()
+        .then((allCards) => {
+            allCards.forEach(item => {
+                idList.push(item.id);
+            })
+
+            for (const id of idList) {
+                cardList.push(id);
+            }
+        })
+        let cardRender = {cards: cardList}
+        res.render('monsters', cardRender);
     } else {
         res.redirect('/');
     }
