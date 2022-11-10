@@ -11,10 +11,6 @@ https://github.com/awoelf/monster-fighter
 https://group11-monster-fighter.herokuapp.com/
 
 
-
-
-
-
 # Browser support
 Chrome
 
