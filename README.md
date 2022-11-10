@@ -15,17 +15,17 @@ https://group11-monster-fighter.herokuapp.com/
 Chrome
 
 # Built With
-Firebase & Friestore - Chat functionally 
-HTML, CSS, JavaScript
-Handlebars - Template engine
-Bootstrap - CSS Framework
-VS Code
+1. Firebase & Friestore - Chat functionally 
+2. HTML, CSS, JavaScript
+3. Handlebars - Template engine
+4. Bootstrap - CSS Framework
+5. VS Code
 
 # APIs
-D&D Monster Database - https://www.dnd5eapi.co/
-Dice API - https://lets-role.wiki/Dice_API
-Pixelate images - https://github.com/giventofly/pixelit
-Background images - https://www.pexels.com/api/
+1. D&D Monster Database - https://www.dnd5eapi.co/
+2. Dice API - https://lets-role.wiki/Dice_API
+3. Pixelate images - https://github.com/giventofly/pixelit
+4. Background images - https://www.pexels.com/api/
 
 
 # Development 
@@ -34,10 +34,10 @@ Game and user flow diagram
 
 
 # Authors
-Cody - @krimeas
-Alexis - @awoelf
-Allen - @allenwang1999
-JaMionn - @osheathe1
+* Cody - @krimeas
+* Alexis - @awoelf
+* Allen - @allenwang1999
+* JaMionn - @osheathe1
 
 
 # License
