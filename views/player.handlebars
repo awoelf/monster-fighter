@@ -3,21 +3,24 @@
     {{> menu}}
     <div class="row d-flex justify-content-around my-2">
         <div class="col-sm-6 col-lg-2 box mb-2">
-            <h3 class="text-center mt-3">User 1</h3>
+            <h3 class="text-center mt-3">{{name}}</h3>
             <ul class="list-group list-group-flush">
                 <li class='list-group-item d-flex align-items-center'>
-                    <p class="box-text m-0">Wins: 3</p>
+                    <p class="box-text m-0">Wins: N/A</p>
                 </li>
                 <li class='list-group-item d-flex align-items-center'>
-                    <p class="box-text m-0">Losses: 3</p>
+                    <p class="box-text m-0">Losses: N/A</p>
                 </li>
                 <li class='list-group-item d-flex align-items-center'>
-                    <p class="box-text m-0">Decks: 2</p>
+                    <p class="box-text m-0">Decks: {{deckSize}}</p>
                 </li>
             </ul>
         </div> 
         <div id="deck-container" class="col-sm-6 col-md-9 box py-2 pb-3 decks">
-            <h3>Deck 1</h3>
+            {{#each decks as |deck|}}
+            <h3>{{deck.deckName}}</h3>
+            {{/each}}
+            {{!-- <h3>Deck 1</h3>
             <div class="d-flex justify-content-around flex-wrap">
                 {{!-- Temporary for debugging. Will make a for loop to 
                 display cards --}}
@@ -26,7 +29,7 @@
                 {{> small-card}}
                 {{> small-card}}
                 {{> small-card}}
-            </div>
+            </div> --}}
         </div>     
     </div>
 </div>

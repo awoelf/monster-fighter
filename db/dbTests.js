@@ -8,7 +8,7 @@ const userID = 2;
 
 //testing the functions here
 sequelize.sync({force: false}).then(async () => {
-     buildDeck();
+    // buildDeck();
     //  const decks = await getDecks(2);
     //  console.log(decks);
     //  viewDeck(1, "meow2");
@@ -80,6 +80,7 @@ async function getDecks(userID) {
         },
         group: 'deck_name'
     });
+    console.log(userDecks.length);
     for(const deck of userDecks) {
         deckList.push(deck.dataValues.deck_name);
     }
