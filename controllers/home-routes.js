@@ -1,5 +1,5 @@
 const e = require('express');
-
+const {Deck, User, Card} = require('../models');
 const router = require('express').Router();
 
 // Route for the homepage
@@ -13,7 +13,26 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
     if(req.session.logged_in) {
-        res.render('dashboard');
+        try{
+            const deckList = [];
+            const userDecks = await Deck.findAll({
+                where: {
+                    user_id: req.session.user_id
+                },
+                group: 'deck_name'
+            });
+            for (const deck of userDecks) {
+                deckList.push(deck.dataValues.deck_name);
+            }
+            var decks = await deckList.map((deckName) => {
+                return {deckName};
+            })
+            var deckRender = {decks: decks};
+            res.render('dashboard', deckRender);
+        } catch (e) {
+            console.log(e);
+            res.render('dashboard');
+        }
     } else {
         res.redirect('/');
     }

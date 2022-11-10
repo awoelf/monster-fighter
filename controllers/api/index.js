@@ -4,7 +4,7 @@ const card = require('../api/card');
 const monsterRoutes = require('./monster');
 
 // Put routes here
-// router.use('/monster', monsterRoutes);
+router.use('/monsters', monsterRoutes);
 router.use('/users', userRoutes);
 router.use('/card', card);
 

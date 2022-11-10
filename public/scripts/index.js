@@ -6,7 +6,6 @@ $('#ready-btn').on('click', () => {
     startBattle();
 })
 
-
 $('#add-btn').on('click', () => {
     $('#cards-selected').text('0/5 Cards selected')
     $('.add-card-checkbox').prop('checked', false);
