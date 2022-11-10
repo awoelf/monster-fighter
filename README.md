@@ -2,16 +2,16 @@
 A card-based fighting game with D&amp;D monsters!
 
 ## Table of Content
-    1. [Description](#description)
-    2. [Sources](#sources)
-    3. [GitHub](#github-repo-link)
-    4. [Heroku](#heroku-deployment-link)
-    5. [Browser](#browser-support)
-    6. [Built With](#built-with)
-    7. [APIs](#apis)
-    8. [Development](#development)
-    9. [Authors](#authors)
-    10.[License](#license)
+1. [Description](#description)
+2. [Sources](#sources)
+3. [GitHub](#github-repo-link)
+4. [Heroku](#heroku-deployment-link)
+5. [Browser](#browser-support)
+6. [Built With](#built-with)
+7. [APIs](#apis)
+8. [Development](#development)
+9. [Authors](#authors)
+10.[License](#license)
 
 ## Description
 A PVP deck building and monster card battle game where you can fight your friends, your enemies, or a random person online.  Log into the game on the landing page, build your first deck from an assortment of over 300 cards and then take it to the battleground to test your skill and luck.
