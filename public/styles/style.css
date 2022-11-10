@@ -43,7 +43,7 @@ h2 {
     margin: 0;
 }
 
-h3, #userDetails {
+h3, #userDetails > h2 {
     font-family: var(--font);
     color: var(--beige);
     font-size: var(--h2-size);
@@ -54,9 +54,20 @@ li {
     border-color: var(--accent-color) !important;
     font-family: var(--font);
     color: var(--beige);
+    font-size: var(--h2-size);
+    text-align: left;
+}
+
+#messagesList li {
+    background-color: transparent !important;
+    border-color: var(--accent-color) !important;
+    font-family: var(--font);
+    color: var(--beige);
     font-size: var(--font-size);
     text-align: left;
-    margin
+    margin-left: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+    list-style-type: none;
 }
 
 .card-icon {
@@ -98,6 +109,11 @@ li {
     height: min-content;
 }
 
+.field-box {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 .log {
     background-color: var(--box-color);
     border-top-left-radius: var(--radius);
@@ -106,8 +122,6 @@ li {
     width: 500px !important;
     overflow-y: scroll;
 }
-
-
 
 .decks {
     overflow-y: scroll;
@@ -157,6 +171,10 @@ li {
     width: 175px;
     height: auto;
     border-radius: var(--radius);
+}
+
+.image-container {
+    min-height: 250px;
 }
 
 .dropdown-item {
@@ -240,6 +258,11 @@ li {
 
 .card-blank {
     background-color: var(--box-color);
+}
+
+.monster-name {
+    font-size: min(var(--font-size), var(--h2-size));
+    line-height: 1;
 }
 
 #playing-field .box {
