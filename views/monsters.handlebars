@@ -12,9 +12,9 @@
             </span>
         </button>
     </div>
-    <div class="col-10 d-flex flex-wrap box justify-content-around m-auto decks py-2">
-        {{!-- Replace with actual cards --}}
-        {{> card uniqueId=115}}
+    <div id="allCards" class="col-10 d-flex flex-wrap box justify-content-around m-auto py-2">
+        {{!-- Cards are inserted here --}}
+        
     </div>
 </div>
 
@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>
-
 
 <div>
     <div class="modal fade" id="create-deck" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="create-deck-label" aria-hidden="true">
@@ -98,3 +97,8 @@
         </div>
     </div>
 </div>
+
+<script src="/scripts/renderAllCards.js"></script>
+<script>
+    renderAllCards();
+</script>
