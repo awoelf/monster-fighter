@@ -25,7 +25,7 @@ $('#add-btn').on('click', () => {
 $('#create-deck-btn').on('click', () => {
     let deckName = $('#deck-name').val();
     let selectedCards = [];
-    $('.add-card-checkbox :checked').each(() => {
+    $('.add-card-checkbox').filter(':checked').each(() => {
         selectedCards.push($(this).attr('name'));
     });
 
