@@ -46,11 +46,4 @@ $('#delete-btn').on('click', () => {
 $('.add-card-checkbox').on('click', () => {
     $('#cards-selected')
     .text(`${$('.add-card-checkbox').filter(':checked').length}/5 Cards selected`)
-
-    if ($('.add-card-checkbox').filter(':checked').length >= 5) {
-        $('.add-card-checkbox').prop('disabled', true)
-        if ($('#deck-name').val()) {
-            $('#create-deck-btn').prop('disabled', false);
-        }
-    }
 })
