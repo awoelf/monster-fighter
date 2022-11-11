@@ -130,7 +130,6 @@ router.get('/battlefield', async (req, res) => {
         } catch (e) {
             console.error(e);
         }
-        res.render('battlefield');
     } else {
         res.redirect('/');
     }
