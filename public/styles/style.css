@@ -272,6 +272,10 @@ li {
     line-height: 1;
 }
 
+.small-card .monster-name {
+    font-size: var(--font-size) !important;
+}
+
 .small-card .monster-stats {
     font-size: var(--small-card-size) !important;
 }
