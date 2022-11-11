@@ -8,7 +8,7 @@ const userID = 2;
 
 //testing the functions here
 sequelize.sync({force: false}).then(async () => {
-     buildDeck();
+    // buildDeck();
     //  const decks = await getDecks(2);
     //  console.log(decks);
     //  viewDeck(1, "meow2");
@@ -80,6 +80,7 @@ async function getDecks(userID) {
         },
         group: 'deck_name'
     });
+    console.log(userDecks.length);
     for(const deck of userDecks) {
         deckList.push(deck.dataValues.deck_name);
     }
@@ -103,14 +104,14 @@ async function viewDeck(userID, deckName) {
     const cards = joins.map((val) => {
         delete val.dataValues.decks;
         return val.dataValues;
-    })
+    });
     return cards;
 }
 
 async function deleteDeck(userID, deckName) {
     const res = await Deck.destroy({
         where: {
-            user_id: userID,
+            user_id: userID, //req.session.user_id
             deck_name: deckName
         }
     });
@@ -126,3 +127,5 @@ async function buildDeck() {
     const cards = await pick20(cardPool);
     const result = await saveAsDeck(cards, "meow2");
 }
+
+module.exports = {saveAsDeck, deleteDeck}

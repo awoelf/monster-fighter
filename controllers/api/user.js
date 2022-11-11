@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.user = userData.name;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -15,6 +16,19 @@ router.post('/', async (req, res) => {
     res.status(400).json({message: "User exists or password length is less than 8."});
   }
 });
+
+router.post('/deck', async (req, res) => {
+  try {
+    if(req.body.deck) {
+      req.session.deck = `${req.body.deck}`;
+      res.status(200).json({message: `Using deck ${req.body.deck}`});
+    } else {
+      res.status(404).json({message: "You must create or select a deck, go to the monster barracks to create a deck."});
+    }
+  } catch (e) {
+    res.status(400).json({message: e});
+  }
+})
 
 router.post('/login', async (req, res) => {
   try {
@@ -35,7 +49,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+      req.session.user = userData.name;
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 

@@ -18,7 +18,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(session({
-    secret: process.env.SESS_SECRET,
+    // secret: process.env.SESS_SECRET,
+    secret: "lo#cos#ih-z0g#$3%@0v1z@g&8u756#b@_=yq%q5kk1$flj=v-",
     resave: false,
     saveUninitialized: true,
     cookie: {

@@ -35,11 +35,9 @@
                     {{> chat-log}}
                     {{> health}}
                 </div>
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
-                {{> small-card}}
+                {{#each cards as |card|}}
+                {{> small-card uniqueId=card.id}}
+                {{/each}}
                 {{> small-card-back}}
                 <div class="col-1 m-1">
                     {{> mana}}
@@ -47,7 +45,5 @@
                 
             </div>
         </div>
-    </div>
-    
-    
+    </div>  
 </div>
