@@ -16,7 +16,7 @@ deck.post('/add', (req, res) => {
     if(Deck.findOne({
         where: {
             deck_name: deckName,
-            user_id: req.session.id
+            user_id: req.session.user_id
         }
     })) {
         console.log("Deck name already exists. Please change the deck name.");
@@ -27,7 +27,7 @@ deck.post('/add', (req, res) => {
                    {
                        deck_name: deckName,
                        card_id: card.card.id,
-                       user_id: req.session.id
+                       user_id: req.session.user_id
                    }
                )
                .then((res) => res.json);
@@ -37,10 +37,10 @@ deck.post('/add', (req, res) => {
 })
 
 deck.delete('/delete', (req, res) => {
-    const {deckName, userId} = req.body;
+    const {deckName} = req.body;
     Deck.destroy({
         where: {
-            user_id: userId, //req.session.user_id
+            user_id: req.session.user_id,
             deck_name: deckName
         }
     })
