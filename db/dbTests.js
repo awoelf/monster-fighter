@@ -104,7 +104,7 @@ async function viewDeck(userID, deckName) {
     const cards = joins.map((val) => {
         delete val.dataValues.decks;
         return val.dataValues;
-    })
+    });
     return cards;
 }
 

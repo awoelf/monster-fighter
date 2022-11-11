@@ -17,6 +17,19 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/deck', async (req, res) => {
+  try {
+    if(req.body.deck) {
+      req.session.deck = `${req.body.deck}`;
+      res.status(200).json({message: `Using deck ${req.body.deck}`});
+    } else {
+      res.status(404).json({message: "You must create or select a deck, go to the monster barracks to create a deck."});
+    }
+  } catch (e) {
+    res.status(400).json({message: e});
+  }
+})
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { name: req.body.name } });

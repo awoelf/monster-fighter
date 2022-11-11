@@ -30,7 +30,7 @@ router.get('/dashboard', async (req, res) => {
             console.log(deckRender);
             res.render('dashboard', deckRender);
         } catch (e) {
-            alert(e);
+            console.error(e);
             res.render('dashboard');
         }
     } else {
@@ -48,7 +48,7 @@ router.get('/player', async (req, res) => {
                 },
                 group: 'deck_name'
             });
-            const deckSize = userDecks.length;
+            const deckCount = userDecks.length;
             const name = req.session.user;
             const decks = [];
             for(const deck of userDecks) {
@@ -62,16 +62,17 @@ router.get('/player', async (req, res) => {
                     },
                 });
                 const cards = await joins.map((val) => {
-                    delete val.dataValues.decks;
-                    return {card: val.dataValues};
+                    return {id: val.dataValues.id};
                 });
-                decks.push({deckName: deck.dataValues.deck_name, deck: cards});
+                console.log(cards);
+                decks.push({deckName: deck.dataValues.deck_name, cards});
             }
-            const renderObj = {name: name, deckSize: deckSize, decks: decks};
+            console.log(decks);
+            const renderObj = {name: name, deckCount: deckCount, decks: decks};
             console.log(renderObj);
             res.render('player', renderObj);
         } catch (e) {
-            alert(e);
+            console.error(e);
             res.render('player');
         }
         
@@ -101,8 +102,28 @@ router.get('/monsters', async (req, res) => {
     }
 })
 
+//TODO: move battlefield rendering logic to its own controller when creating the game aspwct
 router.get('/battlefield', async (req, res) => {
     if(req.session.logged_in) {
+        try{
+            const joins = await Card.findAll({
+                include: {
+                    model: Deck,
+                    where: {
+                        deck_name: req.session.deck,
+                        user_id: req.session.user_id
+                    }
+                },
+                //remove limit when actually adding game logic, purpose is to just render 5 cards on screen
+                limit: 5
+            });
+            const cardRender = joins.map((val) => {
+                return {id: val.dataValues.id}
+            });
+            res.render('battlefield', {cards: cardRender});
+        } catch (e) {
+            console.error(e);
+        }
         res.render('battlefield');
     } else {
         res.redirect('/');

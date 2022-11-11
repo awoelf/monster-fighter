@@ -12,7 +12,7 @@
                     <p class="box-text m-0">Losses: N/A</p>
                 </li>
                 <li class='list-group-item d-flex align-items-center'>
-                    <p class="box-text m-0">Decks: {{deckSize}}</p>
+                    <p class="box-text m-0">Decks: {{deckCount}}</p>
                 </li>
             </ul>
         </div> 
@@ -20,8 +20,9 @@
             {{#each decks as |deck|}}
             <h3>{{deck.deckName}}</h3>
             <div class="d-flex justify-content-around flex-wrap">
-            {{#each deck.deck as |card|}}
-            {{> small-card}}
+            {{#each deck.cards as |card|}}
+            {{> small-card uniqueId=card.id}}
+            {{!-- {{> small-card uniqueId=card.id}} --}}
             {{/each}}
             </div>
             {{/each}}
