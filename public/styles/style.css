@@ -273,7 +273,7 @@ li {
 }
 
 .small-card .monster-name {
-    font-size: var(--font-size) !important;
+    font-size: min(var(--small-card-size),var(--font-size)) !important;
 }
 
 .small-card .monster-stats {
