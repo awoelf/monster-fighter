@@ -64,7 +64,7 @@
                 <form class="list-group list-group-flush deck-list">
                     {{#each cardId as |card|}}
                     <li class='list-group-item d-flex align-items-center'> 
-                        <input type="checkbox" class="add-card-checkbox mr-2">
+                        <input type="checkbox" name={{card}} class="add-card-checkbox mr-2">
                         {{card}}
                     </li>
                     {{/each}}
