@@ -13,6 +13,8 @@
     --h1-size: 48px;
     --h2-size: 32px;
     --font-size: 20px;
+    --small-card-size: 14px;
+    --extra-small-size: 10px;
     --bg-screen: #3C588D40;
     --accent-color: #5f73b3ce;
 }
@@ -169,12 +171,17 @@ li {
 
 .monster-image {
     width: 175px;
-    height: auto;
+    height: 250px;
+    background-size: cover;
     border-radius: var(--radius);
 }
 
-.image-container {
-    min-height: 250px;
+.small-card .monster-image{
+    height: 180px;
+}
+
+.extra-small-card .monster-image{
+    height: 87px;
 }
 
 .dropdown-item {
@@ -263,6 +270,14 @@ li {
 .monster-name {
     font-size: min(var(--font-size), var(--h2-size));
     line-height: 1;
+}
+
+.small-card .monster-stats {
+    font-size: var(--small-card-size) !important;
+}
+
+.extra-small-card .monster-stats {
+    font-size: var(--extra-small-size) !important;
 }
 
 #playing-field .box {

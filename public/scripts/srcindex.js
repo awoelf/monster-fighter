@@ -38,7 +38,7 @@ auth.onAuthStateChanged(user =>{
     //signed in
     whenSignedIn.hidden = false;
     whenSignedOut.hidden = true;
-    userInfo.innerHTML = `<h2>Player: ${user.displayName}!</h2>`;
+    // userInfo.innerHTML = `<h2>Player: ${user.displayName}!</h2>`;
     const userName = user.displayName;
     console.log(user.displayName);
     console.log(user.uid);
