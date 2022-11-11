@@ -3,7 +3,7 @@
     <form class="list-group list-group-flush">
         {{#each decks as |deck|}}
         <li class='list-group-item d-flex align-items-center'>
-            <input type="radio" name="choose-deck" class="mr-2">
+            <input type="radio" name="choose-deck" class="deck-select mr-2" value="{{deck.deckName}}">
             {{deck.deckName}}
         </li>
         {{/each}}
