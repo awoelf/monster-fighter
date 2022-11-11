@@ -88,16 +88,25 @@ router.get('/monsters', async (req, res) => {
         Card.findAll()
         .then((allCards) => {
             allCards.forEach(item => {
-                idList.push(item.id);
+                idList.push({id: item.id, name: item.name});
             })
         })
-        Deck.findAll()
-        .then((allDecks) => {
-            allDecks.forEach(item => {
-                deckList.push(item.deck_name);
-            })
-        })
-        let cardRender = {decks: deckList, cardId: idList}
+        // Deck.findAll()
+        // .then((allDecks) => {
+        //     allDecks.forEach(item => {
+        //         deckList.push(item.deck_name);
+        //     })
+        // })   
+        const userDecks = await Deck.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            group: 'deck_name'
+        });
+        for (const deck of userDecks) {
+            deckList.push({deckName: deck.dataValues.deck_name});
+        }
+        let cardRender = {decks: deckList, cards: idList}
         res.render('monsters', cardRender);
     } else {
         res.redirect('/');
