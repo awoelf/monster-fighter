@@ -6,15 +6,6 @@ let deleteDeckModal = new bootstrap.Modal($('#delete-deck'), {
     keyboard: false
 })
 
-
-const startBattle = () => {
-    document.location.replace('/battlefield');
-}
-
-$('#ready-btn').on('click', () => {
-    startBattle();
-})
-
 $('#add-btn').on('click', () => {
     $('#cards-selected').text('0/5 Cards selected')
     $('.add-card-checkbox').prop('checked', false);

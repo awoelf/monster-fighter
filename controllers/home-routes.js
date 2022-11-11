@@ -91,12 +91,6 @@ router.get('/monsters', async (req, res) => {
                 idList.push({id: item.id, name: item.name});
             })
         })
-        // Deck.findAll()
-        // .then((allDecks) => {
-        //     allDecks.forEach(item => {
-        //         deckList.push(item.deck_name);
-        //     })
-        // })   
         const userDecks = await Deck.findAll({
             where: {
                 user_id: req.session.user_id
