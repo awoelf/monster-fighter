@@ -1,7 +1,7 @@
 # Monster-Fighter
 A card-based fighting game with D&amp;D monsters!
 
-## Table of Content
+## Table of Contents
 1. [Description](#description)
 2. [GitHub](#github-repo-link)
 3. [Heroku](#heroku-deployment-link)
@@ -47,8 +47,8 @@ Monster Fighter line up
 https://docs.google.com/document/d/124t18icMxqRooAdwixC9HjvmSyH8-GCY6qC2acWBN4Q/edit?usp=sharing
 
 Game and user flow diagram
-![alt text](./Monster%20Fighter.jpg)
-![alt text](./Screenshot%202022-11-10%20at%202.24.16%20PM.png)
+![alt text](./Screenshot%202022-11-11%20at%202.07.02%20AM.png)
+![alt text](./1.png)
 
 
 
