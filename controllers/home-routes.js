@@ -100,6 +100,7 @@ router.get('/monsters', async (req, res) => {
         for (const deck of userDecks) {
             deckList.push({deckName: deck.dataValues.deck_name});
         }
+        console.log(deckList);
         let cardRender = {decks: deckList, cards: idList}
         res.render('monsters', cardRender);
     } else {
