@@ -11,41 +11,46 @@ deck.get('/', (req, res) => {
     })
 })
 
-deck.post('/add', (req, res) => {
-    const { cards, deckName } = req.body;
-    if(Deck.findOne({
+deck.post('/add', async (req, res) => {
+    const {cards, name} = req.body;
+    const deckExists = await Deck.findOne({
         where: {
-            deck_name: deckName,
-            user_id: req.session.id
+            deck_name: name,
+            user_id: req.session.user_id
         }
-    })) {
+    });
+    if(deckExists) {
         console.log("Deck name already exists. Please change the deck name.");
     } else {
+        console.log(cards);
         for(const card of cards) {
             {
-               Deck.create(
+               await Deck.create(
                    {
-                       deck_name: deckName,
-                       card_id: card.card.id,
-                       user_id: req.session.id
+                       deck_name: name,
+                       card_id: card,
+                       user_id: req.session.user_id
                    }
-               )
-               .then((res) => res.json);
+               );
            }
        }
     }
 })
 
-deck.delete('/delete', (req, res) => {
-    const {deckName, userId} = req.body;
-    Deck.destroy({
+deck.delete('/delete', async (req, res) => {
+    const {name} = req.body;
+    console.log(name);
+    const response = await Deck.destroy({
         where: {
-            user_id: userId, //req.session.user_id
-            deck_name: deckName
+            user_id: req.session.user_id,
+            deck_name: `${name}`
         }
-    })
-    .then((res) => res.json);
-    console.log(`Deleted ${deckName}`);
+    });
+    if(response) {
+        res.status(200).json({message: `Successfully deleted ${name}`});
+    } else {
+        res.status(400).json({message: `There was an issue deleting ${name}`});
+    }
 })
 
 

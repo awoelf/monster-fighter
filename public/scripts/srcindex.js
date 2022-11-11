@@ -97,7 +97,8 @@ auth.onAuthStateChanged(user =>{
 
     //pulls data from database that has been written by onclick above.  maps through the data, returns li item with 'name' and 'chat' data from doc.  Assignes it as innerHTML.
     unsubscribe = chatsRef
-      .where('uid', '==', user.uid)
+      // .where('uid', '==', user.uid)
+      db.collection('chat').orderBy('time')
       .onSnapshot(querySnapshot => {
         const chatItems = querySnapshot.docs.map(doc => {
           return `<li>${doc.data().name}: ${doc.data().chat}</li>`

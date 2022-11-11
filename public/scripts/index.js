@@ -23,12 +23,15 @@ $('#add-btn').on('click', () => {
 })
 
 $('#create-deck-btn').on('click', () => {
-    let deckName = $('#deck-name').val();
+    let deckName = $('input[name="deck-input"]').val();
+    if(deckName === "") {
+        alert("Please enter a deck name");
+        return;
+    }
     let selectedCards = [];
-    $('.add-card-checkbox :checked').each(() => {
-        selectedCards.push($(this).attr('name'));
-    });
-
+    selectedCards = $('input[type=checkbox]:checked').map(function(_, el) {
+        return $(el).val();
+    }).get();
     fetch('/api/deck/add', {
         method: 'POST',
         headers: {
@@ -36,11 +39,20 @@ $('#create-deck-btn').on('click', () => {
         },
         body: JSON.stringify({cards: selectedCards, name: deckName })
     })
-    .then(addDeckModal.toggle())
+    .then(addDeckModal.toggle()).then(addDeckModal.handleUpdate()).then(document.location.reload());
 })
 
-$('#delete-btn').on('click', () => {
-    $('.delete-deck-input').prop('checked', false);
+$('#delete-selected-btn').on('click', () => {
+    const deckName = $('input[name=choose-deck]:checked').val();
+    fetch('/api/deck/delete', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify({name: deckName})
+    }).catch((err) => {
+        alert(err)
+    }).then(deleteDeckModal.toggle()).then(deleteDeckModal.handleUpdate()).then(document.location.reload());
 })
 
 $('.add-card-checkbox').on('click', () => {
