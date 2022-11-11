@@ -126,3 +126,5 @@ async function buildDeck() {
     const cards = await pick20(cardPool);
     const result = await saveAsDeck(cards, "meow2");
 }
+
+module.exports = {saveAsDeck, deleteDeck}
