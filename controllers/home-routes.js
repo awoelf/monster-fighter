@@ -84,18 +84,20 @@ router.get('/player', async (req, res) => {
 router.get('/monsters', async (req, res) => {
     if(req.session.logged_in) {
         let idList = [];
-        let cardList = [];
+        let deckList = [];
         Card.findAll()
         .then((allCards) => {
             allCards.forEach(item => {
                 idList.push(item.id);
             })
-
-            for (const id of idList) {
-                cardList.push(id);
-            }
         })
-        let cardRender = {cards: cardList}
+        Deck.findAll()
+        .then((allDecks) => {
+            allDecks.forEach(item => {
+                deckList.push(item.deck_name);
+            })
+        })
+        let cardRender = {decks: deckList, cardId: idList}
         res.render('monsters', cardRender);
     } else {
         res.redirect('/');

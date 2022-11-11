@@ -1,5 +1,5 @@
 
-function createCard (id) {
+function createCard(id) {
     console.log(`Creating card with id of ${id}`)
     fetch(`/api/card/${id}`, {
         method: 'GET',
