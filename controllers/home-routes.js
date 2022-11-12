@@ -62,7 +62,7 @@ router.get('/player', async (req, res) => {
                     },
                 });
                 const cards = await joins.map((val) => {
-                    return {id: val.dataValues.id};
+                    return val.dataValues;
                 });
                 console.log(cards);
                 decks.push({deckName: deck.dataValues.deck_name, cards});
@@ -83,14 +83,12 @@ router.get('/player', async (req, res) => {
 
 router.get('/monsters', async (req, res) => {
     if(req.session.logged_in) {
-        let idList = [];
+        let cardList = [];
         let deckList = [];
-        Card.findAll()
-        .then((allCards) => {
-            allCards.forEach(item => {
-                idList.push({id: item.id, name: item.name});
-            })
-        })
+        const cards = await Card.findAll();
+        for(const card of cards) {
+            cardList.push(card.dataValues);
+        }
         const userDecks = await Deck.findAll({
             where: {
                 user_id: req.session.user_id
@@ -101,7 +99,7 @@ router.get('/monsters', async (req, res) => {
             deckList.push({deckName: deck.dataValues.deck_name});
         }
         console.log(deckList);
-        let cardRender = {decks: deckList, cards: idList}
+        let cardRender = {decks: deckList, cards: cardList}
         res.render('monsters', cardRender);
     } else {
         res.redirect('/');
@@ -124,7 +122,7 @@ router.get('/battlefield', async (req, res) => {
                 limit: 5
             });
             const cardRender = joins.map((val) => {
-                return {id: val.dataValues.id}
+                return val.dataValues;
             });
             res.render('battlefield', {cards: cardRender});
         } catch (e) {

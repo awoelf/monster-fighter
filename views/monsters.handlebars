@@ -15,7 +15,7 @@
     <div id="allCards" class="col-10 d-flex flex-wrap box justify-content-around m-auto py-2">
         {{!-- Cards are inserted here --}}
         {{#each cards as |card|}}
-            {{> card uniqueId=card.id}}
+            {{> card cardObj=card}}
         {{/each}}
     </div>
 </div>

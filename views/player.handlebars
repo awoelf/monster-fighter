@@ -21,8 +21,7 @@
             <h3>{{deck.deckName}}</h3>
             <div class="d-flex justify-content-around flex-wrap">
             {{#each deck.cards as |card|}}
-            {{> small-card uniqueId=card.id}}
-            {{!-- {{> small-card uniqueId=card.id}} --}}
+            {{> small-card cardObj=card}}
             {{/each}}
             </div>
             {{/each}}
