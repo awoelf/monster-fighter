@@ -36,7 +36,7 @@
                     {{> health}}
                 </div>
                 {{#each cards as |card|}}
-                {{> small-card uniqueId=card.id}}
+                {{> small-card cardObj=card}}
                 {{/each}}
                 {{> small-card-back}}
                 <div class="col-1 m-1">
